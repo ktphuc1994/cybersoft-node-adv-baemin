@@ -12,8 +12,16 @@ Database name: `db_baemin` ( có thể thay đổi trong .env.sample )
 `postgres_db_baemin_data.sql`: file chứa mock data.
 
 ```
-NestJS cần có data base để chạy.
+NestJS cần có database để chạy.
 Chạy toàn bộ script SQL trong 2 file trên để có database.
+```
+
+## Docker Network
+
+Network chung của database, front_end và back_end là:
+
+```
+node_network
 ```
 
 ## Build dự án bằng docker
