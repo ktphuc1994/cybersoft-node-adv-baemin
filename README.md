@@ -35,6 +35,15 @@ $ docker compose up -d
 
 File JSON của `Postman` nằm trong folder `./back_end/postman`
 
+## Tài khoản mặc định
+
+Tài khoản mặc định để đăng nhập và sử dụng các tính năng cần authen:
+
+```
+Email: khucthienphuc@gmail.com
+Password: ktphuc1994
+```
+
 ## Lưu ý
 
 Khi vào `/dashboard` sẽ không có dữ liệu trong 60 giây đầu tiên.  
