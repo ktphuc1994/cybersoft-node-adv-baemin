@@ -1,0 +1,34 @@
+version: '3.8'
+name: baemin_node_adv_khucthienphuc
+services:
+  baemin-backend-nestjs-container:
+    container_name: baemin-backend-nestjs-container
+    build: ./back_end
+    image: baemin-backend-nestjs-img
+    ports:
+      - 8080:8080
+    env_file:
+      - ./back_end/.env.sample
+    networks:
+      - node_network
+
+  baemin-frontend-nextjs-container:
+    container_name: baemin-frontend-nextjs-container
+    build:
+      context: ./front_end
+      args:
+        BUILD_ENVIRONMENT: local
+        NEXT_PUBLIC_CLIENT_API_URL: http://localhost:8080
+    image: baemin-frontend-nextjs-img
+    ports:
+      - 3000:3000
+    env_file:
+      - ./front_end/.env.production.sample
+    depends_on:
+      - baemin-backend-nestjs-container
+    networks:
+      - node_network
+
+networks:
+  node_network:
+    external: true
